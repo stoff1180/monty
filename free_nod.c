@@ -1,5 +1,5 @@
 #include "monty.h"
-
+stack_t *h = NULL;
 
 /**
  * free_nodes - Frees nodes in the stack.
