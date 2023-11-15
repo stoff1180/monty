@@ -1,7 +1,5 @@
 #include "monty.h"
 
-/*stack_t *h = NULL;*/
-
 /**
  * main - entry point
  * @argc: arguments count
