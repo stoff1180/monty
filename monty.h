@@ -44,7 +44,7 @@ typedef void (*op_f)(stack_t **, unsigned int);
 void open_fd(char *f_name);
 int split_ln(char *buf, int count, int form);
 void read_fd(FILE *);
-int len_chars(FILE *);
+/*int len_chars(FILE *);*/
 void find_f(char *, char *, int, int);
 stack_t *createnode(int n);
 void freenode(void);
