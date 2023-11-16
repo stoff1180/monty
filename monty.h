@@ -39,7 +39,7 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-extern stack_t *h;
+extern stack_t *head;
 typedef void (*op_f)(stack_t **, unsigned int);
 void open_fd(char *f_name);
 int split_ln(char *buf, int count, int form);
@@ -63,9 +63,6 @@ void mod_nod(stack_t **, unsigned int);
 void p_char(stack_t **, unsigned int);
 void p_str(stack_t **, unsigned int);
 void rotl_f(stack_t **, unsigned int);
-void error_f(int err_cod, ...);
-void err_op(int err_cod, ...);
-void err_str(int err_cod, ...);
 void rotr_f(stack_t **, unsigned int);
 
 #endif

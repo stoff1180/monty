@@ -1,18 +1,18 @@
 #include "monty.h"
 
 /**
- * rotl_f - Rotates the first node of the stack to the bottom.
+ * rotl_f - Rotate the first node of the stack to the bottom.
  * @stack: Pointer to a pointer pointing to top node of the stack.
- * @count: Interger representing the line number of of the opcode.
+ * @count: Interger represent the line number of of the opcode.
  * Return: void.
  */
-void rotl_f(stack_t **stack, __attribute__((unused))unsigned int count)
+void rotl_f(stack_t **stack, unsigned int count)
 {
 	stack_t *ptr;
+	(void) count;
 
 	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
 		return;
-
 	for (ptr = *stack; ptr->next != NULL; ptr = ptr->next)
 	{
 	}
@@ -25,9 +25,9 @@ void rotl_f(stack_t **stack, __attribute__((unused))unsigned int count)
 
 
 /**
- * rotr_f - Rotates the last node of the stack to the top.
+ * rotr_f - Rotate the last node of the stack to the top.
  * @stack: Pointer to a pointer pointing to top node of the stack.
- * @count: Interger representing the line number of of the opcode.
+ * @count: Interger represent the line number of of the opcode.
  */
 void rotr_f(stack_t **stack, unsigned int count)
 {
@@ -36,7 +36,6 @@ void rotr_f(stack_t **stack, unsigned int count)
 
 	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
 		return;
-
 	for (ptr = *stack; ptr->next != NULL; ptr = ptr->next)
 	{
 	}
@@ -46,4 +45,3 @@ void rotr_f(stack_t **stack, unsigned int count)
 	(*stack)->prev = ptr;
 	(*stack) = ptr;
 }
-

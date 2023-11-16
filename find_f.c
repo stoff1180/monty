@@ -1,8 +1,8 @@
 #include "monty.h"
 
 /**
- * find_f - find the appropriate function for the opcode
- * @opcode: opcode
+ * find_f - That find the appropriate function for the opcode
+ * @opcode: string of opcode
  * @val: argument of opcode
  * @form:  storage form. If 0 Nodes will be entered as a stack.
  * @count: line number
@@ -44,5 +44,5 @@ void find_f(char *opcode, char *val, int count, int form)
 		}
 	}
 	if (flag == 1)
-		error_f(3, count, opcode);
+		fprintf(stderr, "L%d: unknown instruction %s\n", count, opcode);
 }

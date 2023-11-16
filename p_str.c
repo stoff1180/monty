@@ -1,9 +1,9 @@
 #include "monty.h"
 
 /**
- * p_str - Prints a string.
+ * p_str - That print a string.
  * @stack: Pointer to a pointer pointing to top node of the stack.
- * @count: Interger representing the line number of of the opcode.
+ * @count: Interger represent the line number of of the opcode.
  * Return: nothing.
  */
 void p_str(stack_t **stack, unsigned int count)
@@ -17,7 +17,6 @@ void p_str(stack_t **stack, unsigned int count)
 		printf("\n");
 		return;
 	}
-
 	for (ptr = *stack; ptr != NULL; ptr = ptr->next)
 	{
 		as = ptr->n;
@@ -27,4 +26,3 @@ void p_str(stack_t **stack, unsigned int count)
 	}
 	printf("\n");
 }
-

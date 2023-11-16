@@ -11,7 +11,7 @@ void open_fd(char *f_name)
 	FILE *fd = fopen(f_name, "r");
 
 	if (f_name == NULL || fd == NULL)
-		error_f(2, f_name);
+		fprintf(stderr, "Error: Can't open file %s\n", f_name);
 
 	read_fd(fd);
 	fclose(fd);
@@ -41,11 +41,11 @@ void read_fd(FILE *fd)
 
 
 /**
- * split_ln - Separates each line into tokens to determine which funct to call
+ * split_ln - Splits line into tokens to determine which funct to call
  * @buf: line from the file
  * @count: line number
  * @form:  storage format. If 0 Nodes will be entered as a stack.
- * Return: Returns 0 if the opcode is stack. 1 if queue.
+ * Return: 0 if the opcode is stack. 1 if queue.
  */
 
 int split_ln(char *buf, int count, int form)
@@ -54,7 +54,7 @@ int split_ln(char *buf, int count, int form)
 	const char *delim = "\n ";
 
 	if (buf == NULL)
-		error_f(4);
+		fprintf(stderr, "Error: malloc failed\n");
 
 	opcode = strtok(buf, delim);
 	if (opcode == NULL)

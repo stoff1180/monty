@@ -12,7 +12,7 @@
  */
 void f_call(op_f fcall, char *op, char *val, int count, int form)
 {
-	stack_t *node;
+	stack_t *nod;
 	int flag;
 	int j = 0;
 
@@ -25,19 +25,19 @@ void f_call(op_f fcall, char *op, char *val, int count, int form)
 			flag = -1;
 		}
 		if (val == NULL)
-			error_f(5, count);
+			fprintf(stderr, "L%d: usage: push integer\n", count);
 		while (val[j] != '\0')
 		{
 			if (isdigit(val[j]) == 0)
-				error_f(5, count);
+				fprintf(stderr, "L%d: usage: push integer\n", count);
 			j++;
 		}
-		node = createnode(atoi(val) * flag);
+		nod = createnode(atoi(val) * flag);
 		if (form == 0)
-			fcall(&node, count);
+			fcall(&nod, count);
 		if (form == 1)
-			add_queue(&node, count);
+			add_queue(&nod, count);
 	}
 	else
-		fcall(&h, count);
+		fcall(&head, count);
 }

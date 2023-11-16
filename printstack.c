@@ -1,9 +1,9 @@
 #include "monty.h"
 
 /**
- * printstack - Adds a node to the stack.
+ * printstack - That add a node to the stack.
  * @stack: Pointer to a pointer pointing to top node of the stack.
- * @count: line number of  the opcode.
+ * @count: line number of the opcode.
  * Return: nothing.
  */
 void printstack(stack_t **stack, unsigned int count)
@@ -21,17 +21,15 @@ void printstack(stack_t **stack, unsigned int count)
 	}
 }
 
-
 /**
- * printtop - Prints the top node of the stack.
+ * printtop - That print the top node of the stack.
  * @stack: Pointer to a pointer pointing to top node of the stack.
- * @count: Interger representing the line number of of the opcode.
+ * @count: Interger represent the line number of of the opcode.
  * Return: nothing.
  */
 void printtop(stack_t **stack, unsigned int count)
 {
 	if (stack == NULL || *stack == NULL)
-		err_op(6, count);
+		fprintf(stderr, "L%d: can't pint, stack empty\n", count);
 	printf("%d\n", (*stack)->n);
 }
-

@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * createnode - Creates a node.
+ * createnode - That create a node.
  * @num: Number to go inside the node.
  * Return: Upon sucess a pointer to the node. Otherwise NULL.
  */
@@ -11,7 +11,7 @@ stack_t *createnode(int num)
 
 	node = malloc(sizeof(stack_t));
 	if (node == NULL)
-		error_f(4);
+		fprintf(stderr, "Error: malloc failed\n");
 	node->next = NULL;
 	node->prev = NULL;
 	node->n = num;
@@ -20,27 +20,26 @@ stack_t *createnode(int num)
 
 
 /**
- * add_queue - Adds a node to the queue.
- * @new_node: Pointer to the new node.
+ * add_queue - That add a node to the queue.
+ * @newnode: Pointer to the new node.
  * @count: line number of the opcode.
  */
-void add_queue(stack_t **new_node, unsigned int count)
+void add_queue(stack_t **newnode, unsigned int count)
 {
 	stack_t *ptr;
 	(void)count;
 
-	if (new_node == NULL || *new_node == NULL)
+	if (newnode == NULL || *newnode == NULL)
 		exit(EXIT_FAILURE);
-	if (h == NULL)
+	if (head == NULL)
 	{
-		h = *new_node;
+		head = *newnode;
 		return;
 	}
-	for (ptr = h; ptr->next != NULL; ptr = ptr->next)
+	for (ptr = head; ptr->next != NULL; ptr = ptr->next)
 	{
 	}
-	ptr->next = *new_node;
-	(*new_node)->prev = ptr;
+	ptr->next = *newnode;
+	(*newnode)->prev = ptr;
 
 }
-

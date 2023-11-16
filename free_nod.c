@@ -1,21 +1,21 @@
 #include "monty.h"
-stack_t *h = NULL;
+stack_t *head = NULL;
 
 /**
- * free_nodes - Frees nodes in the stack.
+ * freenode - That free nodes in the stack.
  * return: void.
  */
 void freenode(void)
 {
 	stack_t *ptr;
 
-	if (h == NULL)
+	if (head == NULL)
 		return;
 
-	for (; h != NULL;)
+	for (; head != NULL;)
 	{
-		ptr = h;
-		h = h->next;
+		ptr = head;
+		head = head->next;
 		free(ptr);
 	}
 }
