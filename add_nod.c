@@ -11,8 +11,11 @@ void adds_nod(stack_t **stack, unsigned int count)
 	int res;
 
 	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
+	{
 		fprintf(stderr, "L%d: can't %s, stack too short\n", count, "add");
-
+		freenode();
+		exit(EXIT_FAILURE);
+	}
 	(*stack) = (*stack)->next;
 	res = (*stack)->n + (*stack)->prev->n;
 	(*stack)->n = res;

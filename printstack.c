@@ -30,6 +30,10 @@ void printstack(stack_t **stack, unsigned int count)
 void printtop(stack_t **stack, unsigned int count)
 {
 	if (stack == NULL || *stack == NULL)
+	{
 		fprintf(stderr, "L%d: can't pint, stack empty\n", count);
+		freenode();
+		exit(EXIT_FAILURE);
+	}
 	printf("%d\n", (*stack)->n);
 }

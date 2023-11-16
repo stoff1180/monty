@@ -11,7 +11,11 @@ void pop_f(stack_t **stack, unsigned int count)
 	stack_t *ptr;
 
 	if (stack == NULL || *stack == NULL)
+	{
 		fprintf(stderr, "L%d: can't pop an empty stack\n", count);
+		freenode();
+		exit(EXIT_FAILURE);
+	}
 	ptr = *stack;
 	*stack = ptr->next;
 	if (*stack != NULL)

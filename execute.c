@@ -11,8 +11,11 @@ void open_fd(char *f_name)
 	FILE *fd = fopen(f_name, "r");
 
 	if (f_name == NULL || fd == NULL)
+	{
 		fprintf(stderr, "Error: Can't open file %s\n", f_name);
-
+		freenode();
+		exit(EXIT_FAILURE);
+	}
 	read_fd(fd);
 	fclose(fd);
 }
@@ -54,8 +57,11 @@ int split_ln(char *buf, int count, int form)
 	const char *delim = "\n ";
 
 	if (buf == NULL)
+	{
 		fprintf(stderr, "Error: malloc failed\n");
-
+		freenode();
+		exit(EXIT_FAILURE);
+	}
 	opcode = strtok(buf, delim);
 	if (opcode == NULL)
 		return (form);

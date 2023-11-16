@@ -25,11 +25,19 @@ void f_call(op_f fcall, char *op, char *val, int count, int form)
 			flag = -1;
 		}
 		if (val == NULL)
+		{
 			fprintf(stderr, "L%d: usage: push integer\n", count);
+			freenode();
+			exit(EXIT_FAILURE);
+		}
 		while (val[j] != '\0')
 		{
 			if (isdigit(val[j]) == 0)
+			{
 				fprintf(stderr, "L%d: usage: push integer\n", count);
+				freenode();
+				exit(EXIT_FAILURE);
+			}
 			j++;
 		}
 		nod = createnode(atoi(val) * flag);

@@ -11,7 +11,11 @@ stack_t *createnode(int num)
 
 	node = malloc(sizeof(stack_t));
 	if (node == NULL)
+	{
 		fprintf(stderr, "Error: malloc failed\n");
+		freenode();
+		exit(EXIT_FAILURE);
+	}
 	node->next = NULL;
 	node->prev = NULL;
 	node->n = num;

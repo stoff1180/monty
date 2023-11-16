@@ -44,5 +44,9 @@ void find_f(char *opcode, char *val, int count, int form)
 		}
 	}
 	if (flag == 1)
+	{
 		fprintf(stderr, "L%d: unknown instruction %s\n", count, opcode);
+		freenode();
+		exit(EXIT_FAILURE);
+	}
 }
